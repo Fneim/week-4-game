@@ -1,0 +1,41 @@
+body {
+        background-image: url('../images/gaming-pattern.png');
+    }
+
+    #container {
+        border: 2px #ddd solid;
+        position: fixed;
+        left: 20%;
+        top:15%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 100px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size:65px;
+        text-align:center;
+    }
+
+    #images {
+        text-align: center;
+    }
+
+    img {
+        width: 150px;
+        height: 190px;
+    }
+
+    #randomNum,
+    #score {
+        border-bottom: 2px #ddd solid;
+        height: 50px;
+        width: 100px;
+        font-size: 40px;
+        color: #bbb;
+        padding: 3px;
+        margin: 3px;
+    }

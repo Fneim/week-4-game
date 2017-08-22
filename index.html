@@ -4,59 +4,14 @@
 <head>
     <title>Crystal Collector</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- 
-    <script src="assets/javascript/game.js" /> -->
-    <!-- 
-    <link rel="stylesheet" type="text/css" src="assets/css/reset.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" src="assets/css/style.css"> -->
-    <style>
-    body {
-        background-image: url('gaming-pattern.png');
-    }
-
-    #container {
-        border: 2px #ddd solid;
-        position: fixed;
-        left: 20%;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 100px;
-        text-align: center;
-    }
-
-    #images {
-        text-align: center;
-    }
-
-    img {
-        width: 150px;
-        height: 190px;
-    }
-
-    #randomNum,
-    #score {
-        border-bottom: 2px #ddd solid;
-        height: 50px;
-        width: 100px;
-        font-size: 40px;
-        color: #bbb;
-        padding: 3px;
-        margin: 3px;
-    }
-
-    #video {
-        height: 50px;
-        width: 30px;
-        display: none;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
     <div id="container">
-        <h1>Winter Is Coming!</h1>
+        <h1>~Game of Numbers~</h1>
+        <h2>Winter is Here!</h2>
         <p>You will be given a random number at the start of the game.
             <br> There are four crystals below.By clicking on a crystal you will add a specific amount of points to your total score.
             <br> You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
@@ -74,79 +29,10 @@
         </div>
         <p id="score"></p>
         <p id="result"></p>
-        <video id="video" controls autoplay>
-            <source src="https://youtu.be/8uAziKHNgaY" type="video/mp4" />
-        </video>
     </div>
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-        var jon = Math.floor(Math.random() * 12) + 1;
-        var arya = Math.floor(Math.random() * 12) + 1;
-        var bran = Math.floor(Math.random() * 12) + 1;
-        var sansa = Math.floor(Math.random() * 12) + 1;
-        var score = 0;
-        var wins = 0;
-        var losses = 0;
-        $("#score").text(score);
-
-        //computer will choose random number btw max and min
-        var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-
-        $("#randomNum").text(randomNum);
-
-        function reset() {
-        	randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-        	score = 0;
-
-        $("#randomNum").text(randomNum);
-        $("#score").text(score);
-    }
-
-      
-        $("#stark1").click(function() {
-
-            score = jon + score;
-            $("#score").text(score);
-            match();
-        })
-
-        $("#stark2").click(function() {
-            score = arya + score;
-            $("#score").text(score);
-            match();
-        })
-
-        $("#stark3").click(function() {
-            score = bran + score;
-            $("#score").text(score);
-            match();
-        })
-
-        $("#stark4").click(function() {
-            score = sansa + score;
-            $("#score").text(score);
-            match();
-        })
-
-        function match() {
-
-            if (score === randomNum) {
-                wins++;
-                $("#result").text("Wins: " + wins + " Losses: " + losses);
-
-                alert("It's a match");
-                reset();
-            } else if (score > randomNum) {
-            	losses++
-            	alert("Lost!");
-            	$("#result").text("Wins: " + wins + " Losses: " + losses);
-            	reset();
-            }
-        }
-
-    })
+    <script type="text/javascript" src="assets/javascript/game.js">
     </script>
+
 </body>
 
 </html>
